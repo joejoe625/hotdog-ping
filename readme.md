@@ -68,7 +68,7 @@ http://localhost:3000/get-all-payment-intents
 	- open a new tab in the terminal, run
 		```bash
 		stripe trigger payment_intent.succeeded
-```
+		```
 	- expect the following response
 		```bash
 		2020-07-12 18:42:30   --> charge.succeeded [evt_1H4GgbHMgrROy87IukxbEp4G]
