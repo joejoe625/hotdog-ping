@@ -31,8 +31,8 @@ brew install stripe/stripe-cli/stripe
 ## Installation
 
 ```bash
-git clone ...
-cd 
+git clone git@github.com:joejoe625/hotdog-ping.git
+cd hotdog-ping.git
 npm install
 ```
 
