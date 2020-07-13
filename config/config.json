@@ -1,0 +1,8 @@
+{
+    "development": {
+        "publishable_key": "pk_test_51H38dNHMgrROy87IXD6K9rFT8TA3J5GMgJdG9MQl4XwPwKoO5DBeciKPkgLoY2Z97xUuAdQGwbs0xMCspOLXX3he00vN0DW4ZV",
+        "secret_key": "sk_test_51H38dNHMgrROy87I48JWdGsihump1phge3SmlCK6oqvluwH4hG3i1RJyRnUL0K3rGpA9XA22YnknIjJhcojOEfuJ007COfNk15",
+        "config_id": "development",
+        "node_port": 3000
+    }
+}
