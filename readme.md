@@ -59,3 +59,23 @@ E-commerce app listening at http://localhost:3000
 * Get all payment intents via 
 http://localhost:3000/get-all-payment-intents
 
+
+* Test webhook 
+	- open a new tab in the terminal, run
+		```bash
+		stripe listen --forward-to http://localhost:3000/webhook
+		``` 
+	- open a new tab in the terminal, run
+		```bash
+		stripe trigger payment_intent.succeeded
+```
+	- expect the following response
+		```bash
+		2020-07-12 18:42:30   --> charge.succeeded [evt_1H4GgbHMgrROy87IukxbEp4G]
+		2020-07-12 18:42:30  <--  [200] POST http://localhost:3000/webhook [evt_1H4GgbHMgrROy87IukxbEp4G]
+		2020-07-12 18:42:30   --> payment_intent.created [evt_1H4GgbHMgrROy87IOkAXpLRj]
+		2020-07-12 18:42:30  <--  [200] POST http://localhost:3000/webhook [evt_1H4GgbHMgrROy87IOkAXpLRj]
+		2020-07-12 18:42:30   --> payment_intent.succeeded [evt_1H4GgbHMgrROy87IPZdmAukS]
+		2020-07-12 18:42:30  <--  [200] POST http://localhost:3000/webhook [evt_1H4GgbHMgrROy87IPZdmAukS]
+		```
+

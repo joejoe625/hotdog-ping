@@ -3,7 +3,7 @@ var stripe;
 
 var orderData = {
   items: [{ id: "photo-subscription" }],
-  currency: "nzd"
+  currency: "eur"
 };
 
 // Disable the button until we have Stripe set up on the page

@@ -41,31 +41,24 @@ const stripe = require('stripe')(secret_key);
 // register webhook
 // ***
 app.post('/webhook', bodyParser.raw({type: 'application/json'}), (request, response) => {
-  let event;
-
-  try {
-    event = JSON.parse(request.body);
-  } catch (err) {
-  	response.status(400).send(`Webhook Error: ${err.message}`);
-  }
-
+  const event = request.body
   // Handle the event
   switch (event.type) {
     case 'payment_intent.succeeded':
       const paymentIntent = event.data.object;
-      logger.log('PaymentIntent was successful!');
+      logger.info('PaymentIntent was successful!');
       break;
     case 'payment_method.attached':
       const paymentMethod = event.data.object;
-      logger.log('PaymentMethod was attached to a Customer!');
+      logger.info('PaymentMethod was attached to a Customer!');
       break;
     case 'charge.succeeded':
       const charge = event.data.object;
-      logger.log('charge succeeded ! ' + charge);
+      logger.info('charge succeeded ! ' + charge);
       break;
     case 'payment_intent.created':
       const intent = event.data.object;
-      logger.log('payment intent created! ' + intent);
+      logger.info('payment intent created! ' + intent);
       break;
     // ... handle other event types
     default:
@@ -94,7 +87,7 @@ const calculateOrderAmount = items => {
   // Replace this constant with a calculation of the order's amount
   // Calculate the order total on the server to prevent
   // people from directly manipulating the amount on the client
-  return 5000;
+  return 500;
 };
 
 // ***
